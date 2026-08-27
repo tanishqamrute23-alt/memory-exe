@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #000000;
+    color: #000000;
+    user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+}
+
+/* 3D Windows Bevel Utility Classes */
+.win-bevel {
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: inset 1px 1px 0px #dfdfdf, inset -1px -1px 0px #000000;
+}
+
+.win-bevel-inset {
+  background-color: #ffffff;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0px #000000, inset -1px -1px 0px #dfdfdf;
+}
+
+.win-button {
+  background: linear-gradient(180deg, #ece9d8 0%, #c0c0c0 100%);
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #808080;
+  cursor: pointer;
+}
+
+.win-button:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0px #000000;
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+.win-titlebar {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.win-titlebar-inactive {
+  background: linear-gradient(90deg, #808080 0%, #b0b0b0 100%);
+  color: #d4d0c8;
+}
+
+/* Glowing Early-2000s Title */
+.glow-title {
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00aaff,
+    0 0 40px #00aaff,
+    0 0 80px #0088ff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Green Digital LED Display */
+.font-led {
+  font-family: 'Courier New', Courier, monospace;
+  color: #00ff66;
+  text-shadow: 0 0 6px rgba(0, 255, 102, 0.8), 0 0 12px rgba(0, 255, 102, 0.4);
+  background-color: #001a08;
+  letter-spacing: 2px;
+}
+
+/* Equalizer Bars Animation */
+@keyframes eq-bounce-1 { 0%, 100% { height: 20%; } 50% { height: 95%; } }
+@keyframes eq-bounce-2 { 0%, 100% { height: 80%; } 50% { height: 30%; } }
+@keyframes eq-bounce-3 { 0%, 100% { height: 40%; } 50% { height: 100%; } }
+@keyframes eq-bounce-4 { 0%, 100% { height: 90%; } 50% { height: 15%; } }
+
+.eq-bar-1 { animation: eq-bounce-1 0.6s infinite ease-in-out; }
+.eq-bar-2 { animation: eq-bounce-2 0.7s infinite ease-in-out; }
+.eq-bar-3 { animation: eq-bounce-3 0.5s infinite ease-in-out; }
+.eq-bar-4 { animation: eq-bounce-4 0.8s infinite ease-in-out; }
+
+.eq-paused .eq-bar-1,
+.eq-paused .eq-bar-2,
+.eq-paused .eq-bar-3,
+.eq-paused .eq-bar-4 {
+  animation-play-state: paused !important;
+}
+
+/* Wallpaper Shimmer Effect */
+@keyframes wallpaper-shimmer {
+  0% { filter: brightness(1) contrast(1) hue-rotate(0deg); }
+  50% { filter: brightness(1.4) contrast(1.2) hue-rotate(30deg); }
+  100% { filter: brightness(1) contrast(1) hue-rotate(0deg); }
+}
+
+.shimmer-active {
+  animation: wallpaper-shimmer 0.6s ease-in-out;
+}
+
+/* CRT Scanlines Overlay */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Marquee Scrolling */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 12s linear infinite;
+}
