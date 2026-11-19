@@ -1,339 +1,339 @@
-// "use client";
+"use client";
 
-// import React, { useState } from "react";
-// import { RetroWindow } from "./RetroWindow";
-// import { RecycleBinIcon, TextFileIcon } from "./Icons";
+import React, { useState } from "react";
+import { RetroWindow } from "./RetroWindow";
+import { RecycleBinIcon, TextFileIcon } from "./Icons";
 
-// interface RecycleBinModalProps {
-//   isOpen: boolean;
-//   onClose: () => void;
-//   zIndex: number;
-//   onFocus: () => void;
-// }
+interface RecycleBinModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  zIndex: number;
+  onFocus: () => void;
+}
 
-// const FIRST_CRUSH_TEXT = `----------------------------------------
+const FIRST_CRUSH_TEXT = `----------------------------------------
         
-//         School Year: 2018–19
-// ----------------------------------------
+        School Year: 2018–19
+----------------------------------------
 
-// 12 July 2018
+12 July 2018
 
-// It rained during the afternoon today.
+It rained during the afternoon today.
 
-// I saw her on the roof when she went upstairs to bring the clothes in
-// before they got completely wet.
+I saw her on the roof when she went upstairs to bring the clothes in
+before they got completely wet.
 
-// I was standing near the window pretending to look outside.
+I was standing near the window pretending to look outside.
 
-// She didn't notice me.
+She didn't notice me.
 
-// I don't know why I kept thinking about it during the whole evening.
+I don't know why I kept thinking about it during the whole evening.
 
-// ----------------------------------------
+----------------------------------------
 
-// 24 July 2018
+24 July 2018
 
-// Today she cleared my doubt in class.
+Today she cleared my doubt in class.
 
-// I had been staring at the same question for almost ten minutes.
+I had been staring at the same question for almost ten minutes.
 
-// She noticed and said, "You don't understand this?"
+She noticed and said, "You don't understand this?"
 
-// Then she explained the whole thing in my notebook.
+Then she explained the whole thing in my notebook.
 
-// It was such a small thing.
+It was such a small thing.
 
-// But somehow it made my entire day.
+But somehow it made my entire day.
 
-// ----------------------------------------
+----------------------------------------
 
-// 3 August 2018
+3 August 2018
 
-// She asked me for a pen today.
+She asked me for a pen today.
 
-// A BLUE pen.
+A BLUE pen.
 
-// She returned it after class and said "Thanks."
+She returned it after class and said "Thanks."
 
-// I don't know why I remember such useless details.
+I don't know why I remember such useless details.
 
-// ----------------------------------------
+----------------------------------------
 
-// 17 August 2018
+17 August 2018
 
-// Teacher made new seating arrangements today.
+Teacher made new seating arrangements today.
 
-// And somehow she is sitting two benches away from me.
+And somehow she is sitting two benches away from me.
 
-// Best seating arrangement ever.
+Best seating arrangement ever.
 
-// ----------------------------------------
+----------------------------------------
 
-// 5 September 2018
+5 September 2018
 
-// Teacher's Day today.
+Teacher's Day today.
 
-// She was helping everyone decorate the classroom.
+She was helping everyone decorate the classroom.
 
-// There was glitter everywhere.
+There was glitter everywhere.
 
-// She got some on her face and didn't even notice.
+She got some on her face and didn't even notice.
 
-// I wanted to tell her.
+I wanted to tell her.
 
-// I didn't.
+I didn't.
 
-// ----------------------------------------
+----------------------------------------
 
-// 21 September 2018
+21 September 2018
 
-// She sent me a message today asking for the homework.
+She sent me a message today asking for the homework.
 
-// Just:
+Just:
 
-// "Hey, send today's homework pls."
+"Hey, send today's homework pls."
 
-// I stared at that message for way too long before replying.
+I stared at that message for way too long before replying.
 
-// I finally replied:
+I finally replied:
 
-// "Yeah sure."
+"Yeah sure."
 
-// Very smooth.
+Very smooth.
 
-// ----------------------------------------
+----------------------------------------
 
-// 10 October 2018
+10 October 2018
 
-// We had to stay back after school for the project.
+We had to stay back after school for the project.
 
-// Almost everyone left early.
+Almost everyone left early.
 
-// For some reason, I didn't mind staying.
+For some reason, I didn't mind staying.
 
-// We talked about random things for nearly half an hour.
+We talked about random things for nearly half an hour.
 
-// I don't remember what we talked about.
+I don't remember what we talked about.
 
-// I just remember laughing a lot.
+I just remember laughing a lot.
 
-// ----------------------------------------
+----------------------------------------
 
-// 2 November 2018
+2 November 2018
 
-// Annual function practice today.
+Annual function practice today.
 
-// She was on stage and I was helping with decorations.
+She was on stage and I was helping with decorations.
 
-// At one point she looked towards me and smiled.
+At one point she looked towards me and smiled.
 
-// Maybe she was smiling at someone else.
+Maybe she was smiling at someone else.
 
-// I am going to pretend it was me.
+I am going to pretend it was me.
 
-// ----------------------------------------
+----------------------------------------
 
-// 18 December 2018
+18 December 2018
 
-// Winter has finally started.
+Winter has finally started.
 
-// She came to school wearing a sweater that was way too big.
+She came to school wearing a sweater that was way too big.
 
-// I wanted to tell her it looked cute.
+I wanted to tell her it looked cute.
 
-// Instead I asked:
+Instead I asked:
 
-// "Isn't that sweater too big?"
+"Isn't that sweater too big?"
 
-// Why am I like this?
+Why am I like this?
 
-// ----------------------------------------
+----------------------------------------
 
-// 14 January 2019
+14 January 2019
 
-// School started again after the holidays.
+School started again after the holidays.
 
-// First thing I did when I entered the classroom was look for her.
+First thing I did when I entered the classroom was look for her.
 
-// She was already there.
+She was already there.
 
-// She smiled and said "Hi."
+She smiled and said "Hi."
 
-// That was enough.
+That was enough.
 
-// ----------------------------------------
+----------------------------------------
 
-// 1 February 2019
+1 February 2019
 
-// Today she borrowed my notes.
+Today she borrowed my notes.
 
-// She said my handwriting was actually readable.
+She said my handwriting was actually readable.
 
-// Nobody has ever complimented my handwriting before.
+Nobody has ever complimented my handwriting before.
 
-// I think this is officially my greatest achievement.
+I think this is officially my greatest achievement.
 
-// ----------------------------------------
+----------------------------------------
 
-// 14 February 2019
+14 February 2019
 
-// Valentine's Day.
+Valentine's Day.
 
-// Everyone was making jokes about who likes whom.
+Everyone was making jokes about who likes whom.
 
-// Someone asked me who my crush was.
+Someone asked me who my crush was.
 
-// I denied everything.
+I denied everything.
 
-// She was sitting right there.
+She was sitting right there.
 
-// I don't think she noticed.
+I don't think she noticed.
 
-// Hopefully.
+Hopefully.
 
-// ----------------------------------------
+----------------------------------------
 
-// 8 March 2019
+8 March 2019
 
-// Exams are getting closer.
+Exams are getting closer.
 
-// She helped me with chemistry today.
+She helped me with chemistry today.
 
-// She explained the same thing three times because I kept forgetting it.
+She explained the same thing three times because I kept forgetting it.
 
-// She didn't get annoyed even once.
+She didn't get annoyed even once.
 
-// I wish I could tell her how much I appreciate her.
+I wish I could tell her how much I appreciate her.
 
-// ----------------------------------------
+----------------------------------------
 
-// 25 March 2019
+25 March 2019
 
-// Last few days of school.
+Last few days of school.
 
-// Everyone is talking about holidays and plans.
+Everyone is talking about holidays and plans.
 
-// We took a class photo today.
+We took a class photo today.
 
-// I made sure I was somewhere near her.
+I made sure I was somewhere near her.
 
-// Obviously.
+Obviously.
 
-// ----------------------------------------
+----------------------------------------
 
-// 30 March 2019
+30 March 2019
 
-// Last day of the school year.
+Last day of the school year.
 
-// Everyone was signing each other's notebooks.
+Everyone was signing each other's notebooks.
 
-// She wrote:
+She wrote:
 
-// "Don't forget me. And study properly 😂"
+"Don't forget me. And study properly 😂"
 
-// I laughed when I read it.
+I laughed when I read it.
 
-// Then I read it again when I got home.
+Then I read it again when I got home.
 
-// And again.
+And again.
 
-// ----------------------------------------
+----------------------------------------
 
-// 31 March 2019
+31 March 2019
 
-// Maybe she never knew.
+Maybe she never knew.
 
-// Maybe she knew and just never said anything.
+Maybe she knew and just never said anything.
 
-// Maybe it was never supposed to become anything.
+Maybe it was never supposed to become anything.
 
-// But these little moments...
+But these little moments...
 
-// The rain.
+The rain.
 
-// The classroom.
+The classroom.
 
-// The borrowed pen.
+The borrowed pen.
 
-// The homework messages.
+The homework messages.
 
-// The random conversations.
+The random conversations.
 
-// The smiles.
+The smiles.
 
-// I think I'll remember them for a very long time.
+I think I'll remember them for a very long time.
 
-// ----------------------------------------
+----------------------------------------
 
-// STATUS: DELETED
-// RECOVERABLE: YES
+STATUS: DELETED
+RECOVERABLE: YES
 
-// Some memories were never really deleted.
-// ----------------------------------------`;
+Some memories were never really deleted.
+----------------------------------------`;
 
-// export const RecycleBinModal: React.FC<RecycleBinModalProps> = ({
-//   isOpen,
-//   onClose,
-//   zIndex,
-//   onFocus,
-// }) => {
-//   const [isFileOpen, setIsFileOpen] = useState(false);
+export const RecycleBinModal: React.FC<RecycleBinModalProps> = ({
+  isOpen,
+  onClose,
+  zIndex,
+  onFocus,
+}) => {
+  const [isFileOpen, setIsFileOpen] = useState(false);
 
-//   return (
-//     <>
-//       <RetroWindow
-//         id="recycle-bin-window"
-//         title="Recycle Bin"
-//         icon={<RecycleBinIcon className="w-4 h-4" />}
-//         isOpen={isOpen}
-//         onClose={onClose}
-//         zIndex={zIndex}
-//         onFocus={onFocus}
-//         initialX={120}
-//         initialY={100}
-//         initialWidth={440}
-//         initialHeight={300}
-//       >
-//         <div className="flex flex-col h-full text-xs font-sans">
-//           <div className="win-bevel-inset bg-white p-2 mb-2 flex items-center justify-between text-[#555555]">
-//             <span>1 object(s) in Recycle Bin</span>
-//             <span>Size: 4.8 KB</span>
-//           </div>
+  return (
+    <>
+      <RetroWindow
+        id="recycle-bin-window"
+        title="Recycle Bin"
+        icon={<RecycleBinIcon className="w-4 h-4" />}
+        isOpen={isOpen}
+        onClose={onClose}
+        zIndex={zIndex}
+        onFocus={onFocus}
+        initialX={120}
+        initialY={100}
+        initialWidth={440}
+        initialHeight={300}
+      >
+        <div className="flex flex-col h-full text-xs font-sans">
+          <div className="win-bevel-inset bg-white p-2 mb-2 flex items-center justify-between text-[#555555]">
+            <span>1 object(s) in Recycle Bin</span>
+            <span>Size: 4.8 KB</span>
+          </div>
 
-//           <div className="win-bevel-inset bg-white flex-1 p-4 grid grid-cols-3 gap-4 align-start">
-//             {/* Deleted File: first_crush.txt */}
-//             <div
-//               onClick={() => setIsFileOpen(true)}
-//               onDoubleClick={() => setIsFileOpen(true)}
-//               className="flex flex-col items-center gap-1.5 p-2 rounded hover:bg-[#000080] hover:text-white cursor-pointer group text-center"
-//             >
-//               <TextFileIcon className="w-10 h-10 group-hover:scale-105 transition-transform" />
-//               <span className="truncate max-w-[110px] text-xs font-medium">first_crush.txt</span>
-//             </div>
-//           </div>
-//         </div>
-//       </RetroWindow>
+          <div className="win-bevel-inset bg-white flex-1 p-4 grid grid-cols-3 gap-4 align-start">
+            {/* Deleted File: first_crush.txt */}
+            <div
+              onClick={() => setIsFileOpen(true)}
+              onDoubleClick={() => setIsFileOpen(true)}
+              className="flex flex-col items-center gap-1.5 p-2 rounded hover:bg-[#000080] hover:text-white cursor-pointer group text-center"
+            >
+              <TextFileIcon className="w-10 h-10 group-hover:scale-105 transition-transform" />
+              <span className="truncate max-w-[110px] text-xs font-medium">first_crush.txt</span>
+            </div>
+          </div>
+        </div>
+      </RetroWindow>
 
-//       {/* Notepad Text Viewer for first_crush.txt */}
-//       {isFileOpen && (
-//         <RetroWindow
-//           id="first-crush-notepad"
-//           title="first_crush.txt - Notepad"
-//           icon={<TextFileIcon className="w-4 h-4" />}
-//           isOpen={isFileOpen}
-//           onClose={() => setIsFileOpen(false)}
-//           zIndex={zIndex + 10}
-//           onFocus={onFocus}
-//           initialX={160}
-//           initialY={80}
-//           initialWidth={480}
-//           initialHeight={420}
-//         >
-//           <div className="win-bevel-inset bg-white p-3.5 font-mono text-xs text-black whitespace-pre-wrap leading-relaxed overflow-y-auto max-h-[340px] select-text">
-//             {FIRST_CRUSH_TEXT}
-//           </div>
-//         </RetroWindow>
-//       )}
-//     </>
-//   );
-// };
+      {/* Notepad Text Viewer for first_crush.txt */}
+      {isFileOpen && (
+        <RetroWindow
+          id="first-crush-notepad"
+          title="first_crush.txt - Notepad"
+          icon={<TextFileIcon className="w-4 h-4" />}
+          isOpen={isFileOpen}
+          onClose={() => setIsFileOpen(false)}
+          zIndex={zIndex + 10}
+          onFocus={onFocus}
+          initialX={160}
+          initialY={80}
+          initialWidth={480}
+          initialHeight={420}
+        >
+          <div className="win-bevel-inset bg-white p-3.5 font-mono text-xs text-black whitespace-pre-wrap leading-relaxed overflow-y-auto max-h-[340px] select-text">
+            {FIRST_CRUSH_TEXT}
+          </div>
+        </RetroWindow>
+      )}
+    </>
+  );
+};
